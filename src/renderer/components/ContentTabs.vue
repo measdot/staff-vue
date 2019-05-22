@@ -1,29 +1,20 @@
 <template>
 	<div>
-		<!-- <div class="flex-end" style="height: 80px">
-			<at-tag color="error">Devbox is offline !!</at-tag>
-			<at-button type="text" icon="icon-settings"></at-button>
-			<at-button type="text" icon="icon-alert-octagon"></at-button>
-		</div> -->
-		<div id="golden"></div>
+		<div id="content-tabs"></div>
 	</div>
 </template>
 
 <script>
 	import Layout from '../helpers/layout'
-	import Sidebar from './Sidebar'
-	import ContentTabs from './ContentTabs'
+	import ContentTabComponent from './UiComponent'
 
 	export default {
-	  name: 'landing-page',
-	  components: {Sidebar, ContentTabs},
-	  data () {
-	    return {}
-	  },
+	  name: 'content-tabs',
+	  components: {ContentTabComponent},
 	  mounted () {
 	    return Layout.init({
 	      settings: {
-	        hasHeaders: false,
+	        hasHeaders: true,
 	        constrainDragToContainer: false,
 	        reorderEnabled: true,
 	        selectionEnabled: false,
@@ -49,33 +40,34 @@
 	        popout: 'open in new window'
 	      },
 	      content: [
-	        {type: 'row',
-          content: [
+	        {type: 'stack',
+	          content: [
 	            {
 	              type: 'component',
-	              vueComponent: Sidebar,
-	              // isClosable: false,
-	              title: 'All',
-	              width: 30
-	            },
-	            {
+	              vueComponent: ContentTabComponent,
+	              isClosable: true,
+	              title: 'All'
+	            }, {
 	              type: 'component',
-	              vueComponent: ContentTabs,
-	              // isClosable: false,
+	              vueComponent: ContentTabComponent,
+	              isClosable: false,
 	              title: 'Frequent'
+	            }, {
+	              type: 'component',
+	              vueComponent: ContentTabComponent,
+	              isClosable: false,
+	              title: 'Favourite'
 	            }
 	          ]
 	        }]
-	    }, 'golden')
+	    }, 'content-tabs')
 	  }
 	}
 </script>
 <style lang="css">
-	#golden {
-		top: 0px;
-		right: 0;
-		left: 0;
-		position: absolute;
-		bottom: 0;
+	#content-tabs {
+		/*border: 2px solid red;*/
+		height: 100vh;
+		width: 100%;
 	}
 </style>

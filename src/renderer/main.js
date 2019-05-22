@@ -1,11 +1,14 @@
 import Vue from 'vue'
 import axios from 'axios'
 
-import 'at-ui-style'
 import AtUI from 'at-ui'
+import 'at-ui-style/css/at.min.css'
 
 import 'golden-layout/src/css/goldenlayout-base.css'
 import 'golden-layout/src/css/goldenlayout-light-theme.css'
+
+import 'xel/themes/vanilla.css'
+import 'xel/xel.min'
 
 import App from './App'
 import router from './router'
