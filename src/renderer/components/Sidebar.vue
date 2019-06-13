@@ -6,7 +6,7 @@
 
 <script>
 	import Layout from '../helpers/layout'
-	import SidebarTabComponent from './UiComponent'
+	import SidebarTabComponent from './SidebarUi'
 
 	export default {
 	  name: 'sidebar',
@@ -14,7 +14,7 @@
 	  mounted () {
 	    return Layout.init({
 	      settings: {
-	        hasHeaders: true,
+	        hasHeaders: false,
 	        constrainDragToContainer: false,
 	        reorderEnabled: true,
 	        selectionEnabled: false,
@@ -46,17 +46,7 @@
 	              type: 'component',
 	              vueComponent: SidebarTabComponent,
 	              isClosable: false,
-	              title: 'All'
-	            }, {
-	              type: 'component',
-	              vueComponent: SidebarTabComponent,
-	              isClosable: false,
-	              title: 'Frequent'
-	            }, {
-	              type: 'component',
-	              vueComponent: SidebarTabComponent,
-	              isClosable: false,
-	              title: 'Favourite'
+	              title: 'SideBar'
 	            }
 	          ]
 	        }]

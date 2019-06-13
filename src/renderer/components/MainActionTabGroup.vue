@@ -1,24 +1,20 @@
 <template>
 	<div>
-		<div id="golden"></div>
+		<div id="main-action-tab-group"></div>
 	</div>
 </template>
 
 <script>
 	import Layout from '../helpers/layout'
-	import Sidebar from './Sidebar'
-	import ContentTabs from './Content'
+	import ContentTabComponent from './MainActionHeader'
 
 	export default {
-	  name: 'landing-page',
-	  components: {Sidebar, ContentTabs},
-	  data () {
-	    return {}
-	  },
+	  name: 'main-action-tab-group',
+	  components: {ContentTabComponent},
 	  mounted () {
 	    return Layout.init({
 	      settings: {
-	        hasHeaders: false,
+	        hasHeaders: true,
 	        constrainDragToContainer: false,
 	        reorderEnabled: true,
 	        selectionEnabled: false,
@@ -44,37 +40,28 @@
 	        popout: 'open in new window'
 	      },
 	      content: [
-	        {type: 'row',
-          content: [
+	        {type: 'stack',
+	          content: [
 	            {
 	              type: 'component',
-	              vueComponent: Sidebar,
-	              // isClosable: false,
-	              title: 'All',
-	              width: 30
-	            },
-	            {
+	              vueComponent: ContentTabComponent,
+	              isClosable: true,
+	              title: 'Create Ticket'
+	            }, {
 	              type: 'component',
-	              vueComponent: ContentTabs,
-	              // isClosable: false,
-	              title: 'Frequent'
+	              vueComponent: ContentTabComponent,
+	              isClosable: false,
+	              title: 'Run Crons'
 	            }
 	          ]
 	        }]
-	    }, 'golden')
+	    }, 'main-action-tab-group')
 	  }
 	}
 </script>
 <style lang="css">
-	#golden {
-		top: 0px;
-		right: 0;
-		left: 0;
-		position: absolute;
-		bottom: 0;
+	#main-action-tab-group {
+		height: 100vh;
+		width: 100%;
 	}
-/* 
-	body .lm_content{
-  	overflow: auto;
-	} */
 </style>

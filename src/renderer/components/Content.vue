@@ -6,7 +6,7 @@
 
 <script>
 	import Layout from '../helpers/layout'
-	import ContentTabComponent from './UiComponent'
+	import ContentTabComponent from './MainAction'
 
 	export default {
 	  name: 'content-tabs',
@@ -46,17 +46,12 @@
 	              type: 'component',
 	              vueComponent: ContentTabComponent,
 	              isClosable: true,
-	              title: 'All'
+	              title: 'EC Website'
 	            }, {
 	              type: 'component',
 	              vueComponent: ContentTabComponent,
 	              isClosable: false,
-	              title: 'Frequent'
-	            }, {
-	              type: 'component',
-	              vueComponent: ContentTabComponent,
-	              isClosable: false,
-	              title: 'Favourite'
+	              title: 'DevBox'
 	            }
 	          ]
 	        }]
@@ -66,7 +61,6 @@
 </script>
 <style lang="css">
 	#content-tabs {
-		/*border: 2px solid red;*/
 		height: 100vh;
 		width: 100%;
 	}

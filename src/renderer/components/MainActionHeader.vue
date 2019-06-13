@@ -1,15 +1,14 @@
 <template>
-
+	<h1>Action</h1>
 </template>
 
 <script>
 	export default {
-  name: 'dash-board'
+	  name: 'action-tab'
 	}
 </script>
 
 <style lang="css">
-
 </style>
 
 
