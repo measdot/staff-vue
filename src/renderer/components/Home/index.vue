@@ -1,29 +1,24 @@
 <template>
 	<div>
-		<div class="flex-end" style="height: 80px">
-			<at-tag color="error">Devbox is offline !!</at-tag>
-			<at-button type="text" icon="icon-settings"></at-button>
-			<at-button type="text" icon="icon-alert-octagon"></at-button>
-		</div>
 		<div id="golden"></div>
 	</div>
 </template>
 
 <script>
-	import Layout from '../helpers/layout'
-	import FormComponent from './AppMain.vue'
-	import AnotherFormComponent from './AppMenu'
+	import Layout from '@/helpers/layout'
+	import Sidebar from '@/components/Home/Sidebar'
+	import Content from '@/components/Home/Content'
 
 	export default {
-	  name: 'app-main',
-	  components: {FormComponent, AnotherFormComponent},
+	  name: 'home',
+	  components: {Sidebar, Content},
 	  data () {
 	    return {}
 	  },
 	  mounted () {
-	    var appLayout = Layout.init({
+	    return Layout.init({
 	      settings: {
-	        hasHeaders: true,
+	        hasHeaders: false,
 	        constrainDragToContainer: false,
 	        reorderEnabled: true,
 	        selectionEnabled: false,
@@ -49,39 +44,33 @@
 	        popout: 'open in new window'
 	      },
 	      content: [
-	        {type: 'stack',
-	          content: [
+	        {type: 'row',
+          content: [
 	            {
 	              type: 'component',
-	              vueComponent: FormComponent,
-	              // isClosable: false,
-	              title: 'All'
+	              vueComponent: Sidebar,
+	              width: 30
 	            },
 	            {
 	              type: 'component',
-	              vueComponent: AnotherFormComponent,
-	              // isClosable: false,
-	              title: 'Frequent'
-	            },
-	            {
-	              type: 'component',
-	              vueComponent: FormComponent,
-	              // isClosable: false,
-	              title: 'Favourite'
+	              vueComponent: Content
 	            }
 	          ]
 	        }]
 	    }, 'golden')
-	    return appLayout
 	  }
 	}
 </script>
 <style lang="css">
 	#golden {
-		top: 40px;
+		top: 0px;
 		right: 0;
 		left: 0;
 		position: absolute;
 		bottom: 0;
 	}
+/* 
+	body .lm_content{
+  	overflow: auto;
+	} */
 </style>

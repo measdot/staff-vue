@@ -1,17 +1,17 @@
 <template>
   <div>
-    <div id="dash-board"></div>
+    <div id="main-action"></div>
   </div>
 </template>
 
 <script>
-  import Layout from '../helpers/layout'
-  import MainActionHeader from './MainActionHeader'
-  import MainActionTabGroup from './MainActionTabGroup'
+  import Layout from '@/helpers/layout'
+  import ToolBar from '@/components/Home/Content/Toolbar'
+  import Main from '@/components/Home/Content/Main'
 
   export default {
-    name: 'dash-board',
-    components: {MainActionHeader},
+    name: 'main-action',
+    components: {ToolBar, Main},
     mounted () {
       return Layout.init({
         settings: {
@@ -44,29 +44,29 @@
           {type: 'column',
             content: [{
               type: 'component',
-              vueComponent: MainActionHeader,
-              height: 20,
-              isClosable: true,
-              title: 'MainActionHeader'
+              vueComponent: ToolBar,
+              height: 20
             }, {
               type: 'component',
-              vueComponent: MainActionTabGroup,
-              isClosable: false,
-              title: 'MainActionTabs'
+              vueComponent: Main
             }]
           }]
-      }, 'dash-board')
+      }, 'main-action')
     }
 
   }
 </script>
 
 <style lang="css">
-#dash-board {
+
+#main-action {
   height: 100vh;
   width: 100%;
 }
-#dash-board > .lm_goldenlayout > .lm_item > .lm_splitter { visibility: hidden; pointer-events: none; }
+
+#main-action > .lm_goldenlayout > .lm_item > .lm_splitter { 
+  visibility: hidden; pointer-events: none; 
+}
 </style>
 
 

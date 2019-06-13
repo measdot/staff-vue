@@ -1,24 +1,20 @@
 <template>
 	<div>
-		<div id="golden"></div>
+		<div id="main-content"></div>
 	</div>
 </template>
 
 <script>
-	import Layout from '../helpers/layout'
-	import Sidebar from './Sidebar'
-	import ContentTabs from './Content'
-
+	import Layout from '@/helpers/layout'
+	import Action from './Action'
+	
 	export default {
-	  name: 'landing-page',
-	  components: {Sidebar, ContentTabs},
-	  data () {
-	    return {}
-	  },
+	  name: 'main-content',
+	  components: {Action},
 	  mounted () {
 	    return Layout.init({
 	      settings: {
-	        hasHeaders: false,
+	        hasHeaders: true,
 	        constrainDragToContainer: false,
 	        reorderEnabled: true,
 	        selectionEnabled: false,
@@ -44,37 +40,23 @@
 	        popout: 'open in new window'
 	      },
 	      content: [
-	        {type: 'row',
-          content: [
+	        {type: 'stack',
+	          content: [
 	            {
 	              type: 'component',
-	              vueComponent: Sidebar,
-	              // isClosable: false,
-	              title: 'All',
-	              width: 30
-	            },
-	            {
-	              type: 'component',
-	              vueComponent: ContentTabs,
-	              // isClosable: false,
-	              title: 'Frequent'
+	              vueComponent: Action,
+	              isClosable: true,
+	              title: 'EC Website'
 	            }
 	          ]
 	        }]
-	    }, 'golden')
+	    }, 'main-content')
 	  }
 	}
 </script>
 <style lang="css">
-	#golden {
-		top: 0px;
-		right: 0;
-		left: 0;
-		position: absolute;
-		bottom: 0;
+	#main-content {
+		height: 100vh;
+		width: 100%;
 	}
-/* 
-	body .lm_content{
-  	overflow: auto;
-	} */
 </style>

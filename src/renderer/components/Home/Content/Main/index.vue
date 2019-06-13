@@ -1,16 +1,16 @@
 <template>
 	<div>
-		<div id="content-tabs"></div>
+		<div id="main-tab-group"></div>
 	</div>
 </template>
 
 <script>
-	import Layout from '../helpers/layout'
-	import ContentTabComponent from './MainAction'
+	import Layout from '@/helpers/layout'
+	import Dummy from './dummy_ui'
 
 	export default {
-	  name: 'content-tabs',
-	  components: {ContentTabComponent},
+	  name: 'main-tab-group',
+	  components: {Dummy},
 	  mounted () {
 	    return Layout.init({
 	      settings: {
@@ -44,23 +44,23 @@
 	          content: [
 	            {
 	              type: 'component',
-	              vueComponent: ContentTabComponent,
+	              vueComponent: Dummy,
 	              isClosable: true,
-	              title: 'EC Website'
+	              title: 'Create Ticket'
 	            }, {
 	              type: 'component',
-	              vueComponent: ContentTabComponent,
+	              vueComponent: Dummy,
 	              isClosable: false,
-	              title: 'DevBox'
+	              title: 'Run Crons'
 	            }
 	          ]
 	        }]
-	    }, 'content-tabs')
+	    }, 'main-tab-group')
 	  }
 	}
 </script>
 <style lang="css">
-	#content-tabs {
+	#main-tab-group {
 		height: 100vh;
 		width: 100%;
 	}

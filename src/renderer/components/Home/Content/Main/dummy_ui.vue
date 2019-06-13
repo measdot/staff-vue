@@ -1,5 +1,5 @@
 <template>
-	<h1>Action</h1>
+	<h1>Content Filler</h1>
 </template>
 
 <script>

@@ -5,12 +5,12 @@
 </template>
 
 <script>
-	import Layout from '../helpers/layout'
-	import SidebarTabComponent from './SidebarUi'
+	import Layout from '@/helpers/layout'
+	import SidebarUi from './SidebarUi'
 
 	export default {
 	  name: 'sidebar',
-	  components: {SidebarTabComponent},
+	  components: {SidebarUi},
 	  mounted () {
 	    return Layout.init({
 	      settings: {
@@ -44,7 +44,7 @@
 	          content: [
 	            {
 	              type: 'component',
-	              vueComponent: SidebarTabComponent,
+	              vueComponent: SidebarUi,
 	              isClosable: false,
 	              title: 'SideBar'
 	            }
