@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<div id="golden"></div>
+		<div id="home"></div>
 	</div>
 </template>
 
@@ -57,20 +57,20 @@
 	            }
 	          ]
 	        }]
-	    }, 'golden')
+	    }, 'home')
 	  }
 	}
 </script>
 <style lang="css">
-	#golden {
+	#home {
 		top: 0px;
 		right: 0;
 		left: 0;
 		position: absolute;
 		bottom: 0;
 	}
-/* 
-	body .lm_content{
-  	overflow: auto;
-	} */
+	.lm_content {
+    	background: #e1e1e1;
+    	border: 0px solid #cccccc;
+	}
 </style>

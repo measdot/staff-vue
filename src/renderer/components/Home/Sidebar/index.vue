@@ -56,8 +56,6 @@
 </script>
 <style lang="css">
 	#sidebar {
-		/*border: 2px solid red;*/
 		height: 100vh;
-		width: 100%;
 	}
 </style>

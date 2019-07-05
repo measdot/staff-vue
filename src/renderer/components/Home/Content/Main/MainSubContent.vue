@@ -1,17 +1,16 @@
 <template>
   <div>
-    <div id="main-action"></div>
+    <div id="main-sub-content"></div>
   </div>
 </template>
 
 <script>
   import Layout from '@/helpers/layout'
-  import ToolBar from '@/components/Home/Content/Toolbar'
-  import Main from '@/components/Home/Content/Main'
+  import Dummy from '@/components/Home/Content/Main/dummy_ui.vue'
 
   export default {
-    name: 'main-action',
-    components: {ToolBar, Main},
+    name: 'main-sub-content',
+    components: {Dummy},
     mounted () {
       return Layout.init({
         settings: {
@@ -28,7 +27,7 @@
         },
         dimensions: {
           borderWidth: 5,
-          minItemHeight: 0,
+          minItemHeight: 10,
           minItemWidth: 10,
           headerHeight: 20,
           dragProxyWidth: 300,
@@ -44,29 +43,24 @@
           {type: 'column',
             content: [{
               type: 'component',
-              vueComponent: ToolBar,
+              vueComponent: Dummy,
               height: 20
             }, {
               type: 'component',
-              vueComponent: Main
+              vueComponent: Dummy
             }]
           }]
-      }, 'main-action')
+      }, 'main-sub-content')
     }
 
   }
 </script>
 
 <style lang="css">
-
-#main-action {
-  height: 100vh;
-  width: 100%;
-}
-
-#main-action > .lm_goldenlayout > .lm_item > .lm_splitter { 
-  visibility: hidden; pointer-events: none; 
-}
+  #main-sub-content {
+    height: 100vh;
+    width: 100%;
+  }
 </style>
 
 

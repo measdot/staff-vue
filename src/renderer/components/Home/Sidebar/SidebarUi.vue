@@ -2,28 +2,41 @@
   <div class="container" id="app">
     <div>
       <a-tabs defaultActiveKey="1" :tabPosition="mode" :style="{ height: '100%'}">
-        <a-tab-pane tab="Tab 1" key="1">
+        <a-tab-pane key="1">
+          <span slot="tab">
+            <a-icon style="fontSize:25px" type="desktop" />
+          </span>
           <a-input-search style="margin: 5px 0px" placeholder="Search" @change="onChange" />
-          <a-tree
-            @expand="onExpand"
-            :expandedKeys="expandedKeys"
-            :autoExpandParent="autoExpandParent"
-            :treeData="gData"
-          >
-            <template slot="title" slot-scope="{title}">
-              <span v-if="title.indexOf(searchValue) > -1">
-                {{title.substr(0, title.indexOf(searchValue))}}
-                <span style="color: #f50">{{searchValue}}</span>
-                {{title.substr(title.indexOf(searchValue) + searchValue.length)}}
-              </span>
-              <span v-else>{{title}}</span>
-            </template>
-          </a-tree>
+          <div style="height: 100%">
+            <a-tree
+              @expand="onExpand"
+              :expandedKeys="expandedKeys"
+              :autoExpandParent="autoExpandParent"
+              :treeData="gData"
+            >
+              <template slot="title" slot-scope="{title}">
+                <span v-if="title.indexOf(searchValue) > -1">
+                  {{title.substr(0, title.indexOf(searchValue))}}
+                  <span style="color: #f50">{{searchValue}}</span>
+                  {{title.substr(title.indexOf(searchValue) + searchValue.length)}}
+                </span>
+                <span v-else>{{title}}</span>
+              </template>
+            </a-tree>
+          </div>
         </a-tab-pane>
-        <a-tab-pane tab="Tab 2" key="2">Content of tab 2</a-tab-pane>
-        <a-tab-pane tab="Tab 3" key="3">Content of tab 3</a-tab-pane>
-        <a-tab-pane tab="Tab 4" key="4">Content of tab 4</a-tab-pane>
-        <a-tab-pane tab="Tab 5" key="5">Content of tab 5</a-tab-pane>
+        <a-tab-pane key="2">
+          <span slot="tab">
+            <a-icon style="fontSize:25px" type="cloud" />
+          </span>
+          Content of tab 2
+        </a-tab-pane>
+        <a-tab-pane key="3">
+          <span slot="tab">
+            <a-icon style="fontSize:25px" type="setting" />
+          </span>
+          Content of tab 3
+        </a-tab-pane>
       </a-tabs>
     </div>
   </div>
@@ -124,8 +137,14 @@ const getParentKey = (key, tree) => {
 
 
 <style lang="scss">
-body .lm_content .container .scroll {
-  overflow: auto;
-  height: 100%;
-}
+  // #sidebar .lm_content{
+  //   overflow: auto;
+  // }
+  .ant-tabs .ant-tabs-left-content {
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+  .ant-tabs .ant-tabs-left-bar .ant-tabs-tab, .ant-tabs .ant-tabs-right-bar .ant-tabs-tab {
+    padding: 10px 10px;
+  }
 </style>

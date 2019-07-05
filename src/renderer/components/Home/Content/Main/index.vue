@@ -6,11 +6,11 @@
 
 <script>
 	import Layout from '@/helpers/layout'
-	import Dummy from './dummy_ui'
+	import MainSubContent from '@/components/Home/Content/Main/MainSubContent'
 
 	export default {
 	  name: 'main-tab-group',
-	  components: {Dummy},
+	  components: {MainSubContent},
 	  mounted () {
 	    return Layout.init({
 	      settings: {
@@ -44,14 +44,24 @@
 	          content: [
 	            {
 	              type: 'component',
-	              vueComponent: Dummy,
+	              vueComponent: MainSubContent,
 	              isClosable: true,
 	              title: 'Create Ticket'
 	            }, {
 	              type: 'component',
-	              vueComponent: Dummy,
-	              isClosable: false,
-	              title: 'Run Crons'
+	              vueComponent: MainSubContent,
+	              isClosable: true,
+	              title: 'Run Cron Jobs'
+	            }, {
+	              type: 'component',
+	              vueComponent: MainSubContent,
+	              isClosable: true,
+	              title: 'Create a pull request'
+	            }, {
+	              type: 'component',
+	              vueComponent: MainSubContent,
+	              isClosable: true,
+	              title: 'Reset project'
 	            }
 	          ]
 	        }]

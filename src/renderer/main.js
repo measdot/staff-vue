@@ -10,7 +10,9 @@ import 'ant-design-vue/dist/antd.css'
 import App from './App'
 import router from './router'
 import store from './store'
+import Vuebar from 'vuebar'
 
+Vue.use(Vuebar)
 Vue.use(Antd)
 
 if (!process.env.IS_WEB) Vue.use(require('vue-electron'))
