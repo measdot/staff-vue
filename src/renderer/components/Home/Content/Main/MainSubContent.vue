@@ -7,10 +7,11 @@
 <script>
   import Layout from '@/helpers/layout'
   import Dummy from '@/components/Home/Content/Main/dummy_ui.vue'
+  import Add from '@/components/Home/Content/Main/AddAction.vue'
 
   export default {
     name: 'main-sub-content',
-    components: {Dummy},
+    components: {Dummy, Add},
     mounted () {
       return Layout.init({
         settings: {
@@ -43,8 +44,8 @@
           {type: 'column',
             content: [{
               type: 'component',
-              vueComponent: Dummy,
-              height: 20
+              vueComponent: Add,
+              height: 65
             }, {
               type: 'component',
               vueComponent: Dummy

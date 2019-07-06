@@ -47,21 +47,6 @@
 	              vueComponent: MainSubContent,
 	              isClosable: true,
 	              title: 'Create Ticket'
-	            }, {
-	              type: 'component',
-	              vueComponent: MainSubContent,
-	              isClosable: true,
-	              title: 'Run Cron Jobs'
-	            }, {
-	              type: 'component',
-	              vueComponent: MainSubContent,
-	              isClosable: true,
-	              title: 'Create a pull request'
-	            }, {
-	              type: 'component',
-	              vueComponent: MainSubContent,
-	              isClosable: true,
-	              title: 'Reset project'
 	            }
 	          ]
 	        }]
