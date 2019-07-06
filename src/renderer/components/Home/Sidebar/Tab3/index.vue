@@ -8,6 +8,7 @@
         </a-button>
       </a-col>
     </a-row>
+    
     <a-row type="flex" justify="space-around" align="middle" style="padding:10px 0px;">
       <a-input style="margin:3px;" addonBefore="Full Name" defaultValue="Kumar Gaurav" />
       <a-input style="margin:3px;" addonBefore="Email" defaultValue="kgaurav@pipingrock.com" />
@@ -15,8 +16,8 @@
     </a-row>
 
     <a-row type="flex" justify="space-around" align="middle" style="padding:10px 0px;">
-      <a-input style="margin:3px;" addonBefore="Bitbucket User" defaultValue="pr-kgaurav" />
-      <a-input style="margin:3px;" addonBefore="Bitbucket Pass" defaultValue="**********" />
+      <a-input style="margin:3px;" addonBefore="Bitbucket Username" defaultValue="pr-kgaurav" />
+      <a-input style="margin:3px;" addonBefore="Bitbucket Password" defaultValue="**********" />
     </a-row>
 
     <a-row type="flex" justify="space-around" align="middle" style="padding:10px 0px;">
@@ -36,6 +37,5 @@ export default {
 <style>
 .ant-input-group-addon {
     font-weight: 500;
-    background-color: #d7d4f7;
 }
 </style>

@@ -45,7 +45,7 @@
             content: [{
               type: 'component',
               vueComponent: ToolBar,
-              height: 20
+              height: 7
             }, {
               type: 'component',
               vueComponent: Main

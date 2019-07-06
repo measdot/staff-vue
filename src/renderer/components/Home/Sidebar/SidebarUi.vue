@@ -4,7 +4,7 @@
       <a-tabs defaultActiveKey="1" :tabPosition="mode" :style="{ height: '100%'}">
         <a-tab-pane key="1">
           <span slot="tab">
-            <a-icon style="fontSize:25px" type="desktop" />
+            <a-icon style="fontSize:25px" type="laptop" />
           </span>
           <DevBox></DevBox>
         </a-tab-pane>

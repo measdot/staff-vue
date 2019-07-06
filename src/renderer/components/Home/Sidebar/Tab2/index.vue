@@ -1,8 +1,8 @@
 <template>
   <div>
     <a-row type="flex" justify="space-around" align="middle">
-      <a-col :span="6" style="padding:2px; fontSize:15px; fontWeight:400;">AWS Cloud Infrastructure</a-col>
-      <a-col :span="18">
+      <a-col :span="8" style="padding:2px; fontSize:15px; fontWeight:400;">AWS Cloud Infrastructure</a-col>
+      <a-col :span="16">
         <a-input-search style="margin: 5px 0px" placeholder="Search" @change="onChange" />
       </a-col>
     </a-row>
