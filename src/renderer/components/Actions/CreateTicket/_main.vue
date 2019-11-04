@@ -1,7 +1,33 @@
 <template>
 <div class="scroll">
+  <a-row style="padding:5px; height:50px" type="flex" align="middle" justify="space-around">
+	  <a-col :span="16">
+		<a-breadcrumb>
+			<a-breadcrumb-item href="">
+				<a-icon type="home" />
+			</a-breadcrumb-item>
+			<a-breadcrumb-item href="">
+				<a-icon type="laptop" />
+				<span>DevBox</span>
+			</a-breadcrumb-item>
+			<a-breadcrumb-item href="">
+				<span>Create Ticket</span>
+			</a-breadcrumb-item>
+		</a-breadcrumb>
+	  </a-col>
+	  <a-col :span="8" align="right">
+		<a-button-group>
+			<a-button type="primary">
+				<a-icon type="sync" />
+			</a-button>
+			<a-button type="primary">
+				<a-icon type="play-circle" />
+			</a-button>
+		</a-button-group>
+	  </a-col>
+  </a-row>
   <a-row type="flex">
-    <a-col :span="16">
+    <a-col :span="24">
       <a-row type="flex" align="middle" justify="space-around">
         <a-col :span="8" style="margin: 10px 0; padding:2px; fontSize:15px; fontWeight:500;">Action configuration</a-col>
       </a-row>
@@ -70,21 +96,27 @@
         </a-form-item>
       </a-form>
     </a-col>
-    <a-col :span="8">
-      <a-row type="flex" justify="space-around" align="middle">
-        <a-col :span="8" style="margin: 10px 0; padding:2px; fontSize:15px; fontWeight:500;">Action steps</a-col>
-      </a-row>
-      <a-steps direction="vertical">
-        <a-step title="Step1" description="This is a description." />
-        <a-step title="Step2" description="This is a description." />
-        <a-step title="Step3" description="This is a description." />
-      </a-steps>
-    </a-col>
   </a-row>
 </div>
 </template>
 
 <script>
+
+// With ES5
+// var JiraApi = require('jira-client')
+const signale = require('signale')
+
+signale.success('Operation successful')
+
+// // Initialize
+// var jira = new JiraApi({
+//   protocol: 'https',
+//   host: 'pipingrock.atlassian.net',
+//   username: 'kgaurav@pipingrock.com',
+//   password: 'Pipin#123',
+//   apiVersion: '2'
+// })
+
 export default {
   name: 'add-action',
   data: () => ({

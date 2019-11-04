@@ -1,20 +1,24 @@
 <template>
 	<div>
-		<div id="main-content"></div>
+		<div id="home"></div>
 	</div>
 </template>
 
 <script>
 	import Layout from '@/helpers/layout'
-	import Action from './Action'
-	
+	import Sidebar from '@/components/App/Sidebar'
+	import Content from '@/components/App/Content'
+
 	export default {
-	  name: 'main-content',
-	  components: {Action},
+	  name: 'home',
+	  components: {Sidebar, Content},
+	  data () {
+	    return {}
+	  },
 	  mounted () {
 	    return Layout.init({
 	      settings: {
-	        hasHeaders: true,
+	        hasHeaders: false,
 	        constrainDragToContainer: false,
 	        reorderEnabled: true,
 	        selectionEnabled: false,
@@ -40,23 +44,36 @@
 	        popout: 'open in new window'
 	      },
 	      content: [
-	        {type: 'stack',
-	          content: [
+	        {type: 'row',
+          content: [
 	            {
 	              type: 'component',
-	              vueComponent: Action,
-	              isClosable: true,
-	              title: 'EC Website'
+	              vueComponent: Sidebar,
+	              width: 25
+	            },
+	            {
+	              type: 'component',
+	              vueComponent: Content
 	            }
 	          ]
 	        }]
-	    }, 'main-content')
+	    }, 'home')
 	  }
 	}
 </script>
 <style lang="css">
-	#main-content {
-		height: 100vh;
-		width: 100%;
+	#home {
+		top: 0px;
+		right: 0;
+		left: 0;
+		position: absolute;
+		bottom: 0;
+	}
+	.lm_content {
+    	background: #e1e1e1;
+    	border: 0px solid #cccccc;
+	}
+	.lm_tab.lm_active {
+    	border-bottom: none;
 	}
 </style>

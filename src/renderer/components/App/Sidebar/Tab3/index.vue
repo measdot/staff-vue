@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <div class="scroll">
     <a-row type="flex" justify="space-around" align="middle">
       <a-col :span="6" style="padding:2px; fontSize:15px; fontWeight:400;">Settings</a-col>
       <a-col :span="18" style="padding:5px;" align="right">
         <a-button icon="check" ghost>
-          Submit Changes
+          Submit
         </a-button>
       </a-col>
     </a-row>
@@ -37,5 +37,9 @@ export default {
 <style>
 .ant-input-group-addon {
     font-weight: 500;
+}
+.scroll{
+  overflow: auto;
+  height: 100%;
 }
 </style>

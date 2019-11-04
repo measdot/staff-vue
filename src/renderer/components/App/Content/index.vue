@@ -1,24 +1,20 @@
 <template>
 	<div>
-		<div id="home"></div>
+		<div id="main-content"></div>
 	</div>
 </template>
 
 <script>
 	import Layout from '@/helpers/layout'
-	import Sidebar from '@/components/Home/Sidebar'
-	import Content from '@/components/Home/Content'
-
+	import Action from '@/components/Actions/CreateTicket/'
+	
 	export default {
-	  name: 'home',
-	  components: {Sidebar, Content},
-	  data () {
-	    return {}
-	  },
+	  name: 'main-content',
+	  components: {Action},
 	  mounted () {
 	    return Layout.init({
 	      settings: {
-	        hasHeaders: false,
+	        hasHeaders: true,
 	        constrainDragToContainer: false,
 	        reorderEnabled: true,
 	        selectionEnabled: false,
@@ -44,33 +40,23 @@
 	        popout: 'open in new window'
 	      },
 	      content: [
-	        {type: 'row',
-          content: [
+	        {type: 'stack',
+	          content: [
 	            {
 	              type: 'component',
-	              vueComponent: Sidebar,
-	              width: 25
-	            },
-	            {
-	              type: 'component',
-	              vueComponent: Content
+	              vueComponent: Action,
+	              isClosable: true,
+	              title: 'Create a ticket'
 	            }
 	          ]
 	        }]
-	    }, 'home')
+	    }, 'main-content')
 	  }
 	}
 </script>
 <style lang="css">
-	#home {
-		top: 0px;
-		right: 0;
-		left: 0;
-		position: absolute;
-		bottom: 0;
-	}
-	.lm_content {
-    	background: #e1e1e1;
-    	border: 0px solid #cccccc;
+	#main-content {
+		height: 100vh;
+		width: 100%;
 	}
 </style>

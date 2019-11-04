@@ -1,32 +1,34 @@
 <template>
-  <div>
+  <div class="scroll">
     <a-row type="flex" justify="space-around" align="middle">
-      <a-col :span="8" style="padding:2px; fontSize:15px; fontWeight:400;">AWS Cloud Infrastructure</a-col>
-      <a-col :span="16">
+      <a-col :span="6" style="padding:2px; fontSize:15px; fontWeight:400;">DevBox</a-col>
+      <a-col :span="18">
         <a-input-search style="margin: 5px 0px" placeholder="Search" @change="onChange" />
       </a-col>
     </a-row>
-    <a-tree
-      @expand="onExpand"
-      :expandedKeys="expandedKeys"
-      :autoExpandParent="autoExpandParent"
-      :treeData="gData"
-    >
-      <template slot="title" slot-scope="{title}">
-        <span v-if="title.indexOf(searchValue) > -1">
-        {{title.substr(0, title.indexOf(searchValue))}}
-        <span style="color: #f50">{{searchValue}}</span>
-        {{title.substr(title.indexOf(searchValue) + searchValue.length)}}
-        </span>
-        <span v-else>{{title}}</span>
-      </template>
-    </a-tree>
+    <div>
+      <a-tree
+        @expand="onExpand"
+        :expandedKeys="expandedKeys"
+        :autoExpandParent="autoExpandParent"
+        :treeData="gData"
+      >
+        <template slot="title" slot-scope="{title}">
+          <span v-if="title.indexOf(searchValue) > -1">
+          {{title.substr(0, title.indexOf(searchValue))}}
+          <span style="color: #f50">{{searchValue}}</span>
+          {{title.substr(title.indexOf(searchValue) + searchValue.length)}}
+          </span>
+          <span v-else>{{title}}</span>
+        </template>
+      </a-tree>  
+    </div>
   </div>
 </template>
   
 <script>
 export default {
-  name: 'tab-cloud',
+  name: 'tab-devbox',
   components: {},
   methods: {
     onExpand  (expandedKeys) {
@@ -115,3 +117,6 @@ const getParentKey = (key, tree) => {
   return parentKey
 }
 </script>
+
+<style>
+</style>

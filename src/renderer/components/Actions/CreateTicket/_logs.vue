@@ -4,7 +4,7 @@
 
 <script>
 	export default {
-	  name: 'action-tab'
+	  name: 'action-logs'
 	}
 </script>
 

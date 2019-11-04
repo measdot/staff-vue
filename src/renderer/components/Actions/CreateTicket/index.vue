@@ -6,12 +6,13 @@
 
 <script>
   import Layout from '@/helpers/layout'
-  import Dummy from '@/components/Home/Content/Main/dummy_ui.vue'
-  import Add from '@/components/Home/Content/Main/AddAction.vue'
+  import Info from './_info.vue'
+  import Logs from './_logs.vue'
+  import Action from './_main.vue'
 
   export default {
     name: 'main-sub-content',
-    components: {Dummy, Add},
+    components: {Info, Action, Logs},
     mounted () {
       return Layout.init({
         settings: {
@@ -41,14 +42,26 @@
           popout: 'open in new window'
         },
         content: [
-          {type: 'column',
+          {
+            type: 'column',
             content: [{
+              type: 'row',
+              content: [
+                {
+                  type: 'component',
+                  width: 70,
+                  vueComponent: Action
+                },
+                {
+                  type: 'component',
+                  vueComponent: Info
+                }
+              ]
+            },
+            {
               type: 'component',
-              vueComponent: Add,
-              height: 65
-            }, {
-              type: 'component',
-              vueComponent: Dummy
+              height: 25,
+              vueComponent: Logs
             }]
           }]
       }, 'main-sub-content')
